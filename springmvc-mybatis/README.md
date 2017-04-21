@@ -66,7 +66,7 @@ mvn clean package -Dmaven.test.skip=true -Ptest
 mvn clean package -Dmaven.test.skip=true -Pprod
 ```
 
-# 部署
+# 部署 
 
 [jdk1.8]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [maven3]: http://maven.apache.org/download.cgi
