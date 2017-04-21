@@ -80,5 +80,5 @@ mvn clean package -Dmaven.test.skip=true -Pprod
 [spring boot actuator]: http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready
 [jersey]: https://jersey.java.net/ 
 
-[img-1]: http://gitlab.easytoolsoft-inc.com/devops/springboot.template/raw/master/docs/assets/images/img-1.png
-[img-2]: http://gitlab.easytoolsoft-inc.com/devops/springboot.template/raw/master/docs/assets/images/img-2.png
+[img-1]: https://raw.githubusercontent.com/easytoolsoft/springboot-project-template/master/docs/assets/images/img-1.png
+[img-2]: https://raw.githubusercontent.com/easytoolsoft/springboot-project-template/master/docs/assets/images/img-2.png

@@ -86,5 +86,5 @@ mvn clean package -Dmaven.test.skip=true -Pprod
 [spring aop]: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#aop
 [spring boot actuator]: http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready
 
-[img-1]: http://gitlab.easytoolsoft-inc.com/devops/springboot.template/raw/master/docs/assets/images/img-1.png
-[img-2]: http://gitlab.easytoolsoft-inc.com/devops/springboot.template/raw/master/docs/assets/images/img-2.png
+[img-1]: https://raw.githubusercontent.com/easytoolsoft/springboot-project-template/master/docs/assets/images/img-1.png
+[img-2]: https://raw.githubusercontent.com/easytoolsoft/springboot-project-template/master/docs/assets/images/img-2.png
