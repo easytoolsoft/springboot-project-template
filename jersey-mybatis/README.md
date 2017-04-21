@@ -29,11 +29,6 @@ jersey-mybatis是一个基于spring boot + jersey +  mybatis + mysql + swagger�
 - exception: 接口返回的数据模型类模块
 - service：业务逻辑类模块
 - rest：基于jersey restful api模块
-    - controller: mvc控制器
-    - converter: http message 转换器
-    - filter: servlet filter类
-    - handler: 项目统一处理器模块(如异常等)
-    - model: 视图模型对象类
 - resources
     - conf: 项目相关配置文件
 
