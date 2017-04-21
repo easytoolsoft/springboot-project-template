@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.easytoolsoft</groupId>
+        <artifactId>easytoolsoft-spring-boot-starter-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.easytoolsoft</groupId>
+    <artifactId>springboot-project-template</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <project.github.group>https://github.com/easytoolsoft</project.github.group>
+        <project.github.url>https://github.com/easytoolsoft/springboot-project-template.git</project.github.url>
+    </properties>
+    <inceptionYear>2017</inceptionYear>
+    <developers>
+        <developer>
+            <id>tomdeng</id>
+            <name>tomdeng</name>
+            <email>14068728@qq.com</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <url>http://www.easytoolsoft.com</url>
+            <organization>easytoolsoft</organization>
+            <organizationUrl>http://www.easytoolsoft.com</organizationUrl>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>${project.github.url}</connection>
+        <developerConnection>${project.github.url}</developerConnection>
+        <url>${project.github.group}</url>
+    </scm>
+    <organization>
+        <name>easytoolsoft Inc.</name>
+        <url>http://www.easytoolsoft.com/</url>
+    </organization>
+    <ciManagement>
+        <system></system>
+        <url></url>
+    </ciManagement>
+</project>
