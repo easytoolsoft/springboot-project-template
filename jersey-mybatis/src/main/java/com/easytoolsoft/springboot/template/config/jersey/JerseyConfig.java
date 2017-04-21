@@ -16,7 +16,10 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class JerseyConfig extends ResourceConfig {
-
+    @Value("${server.host}")
+    private String host;
+    @Value("${server.port}")
+    private int port;
     @Value("${spring.jersey.application-path}")
     private String apiPath;
 
@@ -44,6 +47,7 @@ public class JerseyConfig extends ResourceConfig {
         config.setTitle("SpringBoot-Project-Template");
         config.setVersion("v1");
         config.setContact("easytoolsoft");
+        config.setHost(host + ":" + port);
         config.setSchemes(new String[] {"http", "https"});
         config.setBasePath(this.apiPath);
         config.setResourcePackage("com.easytoolsoft.springboot.template.rest");

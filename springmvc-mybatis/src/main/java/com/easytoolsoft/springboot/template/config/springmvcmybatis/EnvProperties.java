@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.jerseymybatis;
+package com.easytoolsoft.springboot.template.config.springmvcmybatis;
 
 import lombok.Getter;
 import lombok.Setter;
