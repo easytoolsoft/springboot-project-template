@@ -12,8 +12,13 @@ import com.easytoolsoft.springboot.template.service.EventService;
 import com.easytoolsoft.springboot.template.web.controller.common.BaseController;
 import com.easytoolsoft.springboot.template.web.model.DataGridPager;
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,8 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/rest/member/event")
 public class EventController
     extends BaseController<EventService, Event, EventExample, Integer> {
-    @GetMapping(value = "/list")
+
     @OpLog(name = "分页获取系统日志列表")
+    @ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")
+    @GetMapping(value = {""})
     public Map<String, Object> list(final DataGridPager pager, final String fieldName, final String keyword) {
         final PageInfo pageInfo = pager.toPageInfo();
         final List<Event> list = this.service.getByPage(pageInfo, fieldName, "%" + keyword + "%");
@@ -36,17 +43,43 @@ public class EventController
         return modelMap;
     }
 
-    @Override
-    @PostMapping(value = "/remove")
-    @OpLog(name = "删除系统日志")
-    public ResponseResult remove(final Integer id) {
-        final ResponseResult<String> result = new ResponseResult<>();
-        this.service.removeById(id);
-        return result;
+    @OpLog(name = "获取事件详细信息")
+    @ApiOperation(value = "获取事件详细信息", notes = "根据url的id来获取事件详细信息")
+    @ApiImplicitParam(name = "id", value = "事件ID", required = true, dataType = "Integer")
+    @GetMapping(value = "/{id}")
+    public Event getById(@PathVariable Integer id) {
+        return this.service.getById(id);
     }
 
-    @GetMapping(value = "/clear")
+    @OpLog(name = "创建事件")
+    @ApiOperation(value = "创建事件", notes = "根据Event对象创建事件")
+    @ApiImplicitParam(name = "event", value = "事件详细实体event", required = true, dataType = "Event")
+    @PostMapping(value = "")
+    public Event add(Event event) {
+        this.service.add(event);
+        return event;
+    }
+
+    @OpLog(name = "更新事件详细信息")
+    @ApiOperation(value = "更新事件详细信息", notes = "根据url的id来指定更新对象，并根据传过来的event信息来更新事件详细信息")
+    @ApiImplicitParam(name = "event", value = "事件详细实体event", required = true, dataType = "Event")
+    @PutMapping(value = "")
+    public Event editById(Event event) {
+        this.service.editById(event);
+        return event;
+    }
+
+    @OpLog(name = "删除事件")
+    @ApiOperation(value = "删除事件", notes = "根据url的id来指定删除对象")
+    @ApiImplicitParam(name = "id", value = "事件ID", required = true, dataType = "Integer")
+    @DeleteMapping(value = "/{id}")
+    public int remove(@PathVariable Integer id) {
+       return this.service.removeById(id);
+    }
+
     @OpLog(name = "清除系统日志")
+    @ApiOperation(value = "清除系统日志", notes = "清除所有系统日志")
+    @DeleteMapping(value = "")
     public ResponseResult clear() {
         final ResponseResult<String> result = new ResponseResult<>();
         this.service.clear();

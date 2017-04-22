@@ -39,4 +39,9 @@ public class Constants {
      * 系统运行环境配置项默认值
      */
     public final static String ENV = "prod";
+
+    /**
+     *
+     */
+    public static final String CURRENT_USER = "user";
 }

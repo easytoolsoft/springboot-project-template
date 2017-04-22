@@ -2,10 +2,12 @@ package com.easytoolsoft.springboot.template.config.web;
 
 import java.util.List;
 
-import com.easytoolsoft.springboot.template.web.converter.ResponseResult2HttpMessageConverter;
+import com.easytoolsoft.springboot.template.web.common.CurrentUserMethodArgumentResolver;
+import com.easytoolsoft.springboot.template.web.common.ResponseResult2HttpMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -29,6 +31,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addMapping("/**");
     }
 
+    @Override
+    public void addArgumentResolvers(final List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add(currentUserMethodArgumentResolver());
+    }
+
     @Bean
     public ResponseResult2HttpMessageConverter messageConverter() {
         return new ResponseResult2HttpMessageConverter();
@@ -40,5 +47,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         //max file size 10M
         multipartResolver.setMaxUploadSize(10 * 1024 * 1024);
         return multipartResolver;
+    }
+
+    @Bean
+    public HandlerMethodArgumentResolver currentUserMethodArgumentResolver() {
+        return new CurrentUserMethodArgumentResolver();
     }
 }

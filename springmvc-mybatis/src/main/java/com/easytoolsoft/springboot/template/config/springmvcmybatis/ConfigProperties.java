@@ -1,10 +1,14 @@
 package com.easytoolsoft.springboot.template.config.springmvcmybatis;
 
+import javax.validation.Valid;
+
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * 自定义配置类
@@ -14,10 +18,24 @@ import org.springframework.context.annotation.PropertySource;
  **/
 @Getter
 @Setter
+@Validated
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template")
 @PropertySource("classpath:conf/springmvcmybatis/config.properties")
 public class ConfigProperties {
-    private String item1;
-    private String item2;
+    @Valid
+    private Shiro shiro = new Shiro();
+
+    public static class Shiro {
+        @NotEmpty
+        private String filters;
+
+        public String getFilters() {
+            return filters;
+        }
+
+        public void setFilters(String filters) {
+            this.filters = filters;
+        }
+    }
 }

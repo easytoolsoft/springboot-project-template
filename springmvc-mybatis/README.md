@@ -38,7 +38,8 @@ springmvc-mybatis是一个基于spring boot + spring mvc +  mybatis + mysql + sw
     - conf: 项目相关配置文件
     - static: web静态资源文件
     - templates: thymeleaf html模板
-
+- swagger
+    - swagger url: http://localhost:8000/swagger-ui.html
 
 # 项目构建
 利用maven profile把项目分成三个环境配置项目:dev(开发),test(测试),prod(生产).并能过maven的[filter][]机制在构建时自动替换相关的配置项

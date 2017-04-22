@@ -31,6 +31,8 @@ jersey-mybatis是一个基于spring boot + jersey +  mybatis + mysql + swagger�
 - rest：基于jersey restful api模块
 - resources
     - conf: 项目相关配置文件
+- swagger
+    - swagger url: http://localhost:8000/webjars/swagger-ui/3.0.5/index.html
 
 
 # 项目构建

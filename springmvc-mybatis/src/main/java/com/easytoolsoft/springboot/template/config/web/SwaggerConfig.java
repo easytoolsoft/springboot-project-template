@@ -34,7 +34,7 @@ public class SwaggerConfig {
             .title("EasyToolSoft SpringBoot Project Template")
             .description("EasyToolSoft SpringBoot 项目模板")
             .termsOfServiceUrl("http://www.easytoolsoft.com")
-            .contact(new Contact("easytoolsoft", "http://www.easytoolsoft", "14068728@qq.com"))
+            .contact(new Contact("easytoolsoft", "http://www.easytoolsoft.com", "14068728@qq.com"))
             .version("1.0")
             .build();
     }

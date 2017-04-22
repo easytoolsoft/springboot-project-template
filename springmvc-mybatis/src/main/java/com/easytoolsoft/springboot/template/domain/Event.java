@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * 用户操作事件或日志(springboot.template_event表)持久化类
+ * 用户操作事件或日志(ezrpt_member_event表)持久化类
  *
  * @author zhiwei.deng
  * @date 2017-03-25
