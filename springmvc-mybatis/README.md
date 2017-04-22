@@ -13,6 +13,7 @@ springmvc-mybatis是一个基于spring boot + spring mvc +  mybatis + mysql + sw
 - [spring mvc][]
 - [spring validation][] ([validation入门教程][])
 - [thymeleaf][] 
+- [shiro][]
 - [mybatis][]
 - [swagger][]
 - [logback][]
@@ -81,6 +82,7 @@ mvn clean package -Dmaven.test.skip=true -Pprod
 [swagger]: http://swagger.io/
 [logback]: https://logback.qos.ch/manual/
 [thymeleaf]: http://www.thymeleaf.org/
+[shiro]: http://shiro.apache.org/
 [filter]: https://buzheng.org/maven-profile-for-multiple-enviroments.html
 [spring validation]: http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/#validation
 [validation入门教程]: http://jinnianshilongnian.iteye.com/blog/1990081
