@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.easytoolsoft.springboot.template.service.EventService;
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,8 @@ public class AccountController {
     private EventService eventService;
 
     @GetMapping(value = {"/login"})
-    public String login() {
+    public String login(final Model model) {
+        model.addAttribute("username","tomdeng");
         return "account/login";
     }
 

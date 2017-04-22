@@ -4,7 +4,7 @@
     <appender name="FILE_ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>@logging.file@</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%8.8t|%c.%M:%L] %m%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%t|%c.%M:%L] %m%n</pattern>
             <charset>@logging.charset@</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -20,7 +20,7 @@
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>@logging.file.err@</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%8.8t|%c.%M:%L] %m%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%t|%c.%M:%L] %m%n</pattern>
             <charset>@logging.charset@</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -38,7 +38,7 @@
     <!--direct log messages to stdout -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%highlight(%5p)|%8.8t|%30.30c.%10M:%3L]%m%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%highlight(%5p)|%t|%c{26}.%10M:%3L]%m%n</pattern>
             <charset>@logging.charset@</charset>
         </encoder>
     </appender>

@@ -2,6 +2,7 @@ package com.easytoolsoft.springboot.template.web.handler;
 
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
@@ -51,6 +52,16 @@ public class ExceptionAdvice {
     public ResponseResult handleHttpMediaTypeNotSupportedException(Exception e) {
         log.error("不支持当前媒体类型", e);
         return new ResponseResult().failure(415, "不支持当前媒体类型", e.toString());
+    }
+
+    /**
+     * 401 - Unauthorized
+     */
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseResult handleUnauthorizedException(UnauthorizedException e) {
+        log.error("没有权限", e);
+        return new ResponseResult().failure(401, "对不起!您没有权限,访问拒绝.", e.toString());
     }
 
     /**
