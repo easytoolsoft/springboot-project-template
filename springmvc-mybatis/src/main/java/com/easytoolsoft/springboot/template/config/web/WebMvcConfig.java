@@ -1,9 +1,11 @@
 package com.easytoolsoft.springboot.template.config.web;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.easytoolsoft.springboot.template.web.common.CurrentUserMethodArgumentResolver;
 import com.easytoolsoft.springboot.template.web.common.ResponseResult2HttpMessageConverter;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -38,7 +40,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public ResponseResult2HttpMessageConverter messageConverter() {
-        return new ResponseResult2HttpMessageConverter();
+        ResponseResult2HttpMessageConverter converter = new ResponseResult2HttpMessageConverter();
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+        converter.setObjectMapper(objectMapper);
+        return converter;
     }
 
     @Bean
