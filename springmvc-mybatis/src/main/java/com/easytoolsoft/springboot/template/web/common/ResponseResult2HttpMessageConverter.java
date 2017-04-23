@@ -25,7 +25,7 @@ public class ResponseResult2HttpMessageConverter extends MappingJackson2HttpMess
 
     @Override
     protected void writeInternal(final Object object, final Type type, final HttpOutputMessage outputMessage)
-        throws IOException, HttpMessageNotWritableException {
+        throws IOException, HttpMessageNotWritableException { 
         if (object instanceof ResponseResult) {
             super.writeInternal(object, type, outputMessage);
         } else {
