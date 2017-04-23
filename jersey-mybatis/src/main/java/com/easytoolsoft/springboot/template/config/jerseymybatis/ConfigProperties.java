@@ -16,7 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template")
-@PropertySource("classpath:conf/springmvcmybatis/config.properties")
+@PropertySource("classpath:conf/jerseymybatis/config.properties")
 public class ConfigProperties {
     private String item1;
     private String item2;

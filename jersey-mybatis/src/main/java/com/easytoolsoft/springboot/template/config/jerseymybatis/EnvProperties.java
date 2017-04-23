@@ -16,7 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template.env")
-@PropertySource("classpath:conf/springmvcmybatis/env.properties")
+@PropertySource("classpath:conf/jerseymybatis/env.properties")
 public class EnvProperties {
     private String appName;
     private String name;

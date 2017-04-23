@@ -211,6 +211,22 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <excludes>
+                    <exclude>mybatis/**</exclude>
+                    <exclude>sql/**</exclude>
+                    <exclude>static/**</exclude>
+                    <exclude>templates/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>mybatis/**</include>
+                    <include>sql/**</include>
+                    <include>static/**</include>
+                    <include>templates/**</include>
+                </includes>
             </resource>
         </resources>
         <plugins>

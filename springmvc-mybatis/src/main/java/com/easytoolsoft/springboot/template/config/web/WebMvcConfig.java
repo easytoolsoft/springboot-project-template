@@ -30,7 +30,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addCorsMappings(final CorsRegistry registry) {
-        registry.addMapping("/**");
+        registry.addMapping("/rest/**");
     }
 
     @Override

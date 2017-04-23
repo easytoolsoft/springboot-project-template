@@ -196,6 +196,18 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <excludes>
+                    <exclude>mybatis/**</exclude>
+                    <exclude>sql/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>mybatis/**</include>
+                    <include>sql/**</include>
+                </includes>
             </resource>
         </resources>
         <plugins>
