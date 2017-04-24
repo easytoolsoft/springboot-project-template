@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.springmvcmybatis;
+package com.easytoolsoft.springboot.template.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * 公共配置类
+ * 应用环境配置类
  *
  * @author zhiwei.deng
  * @date 2017-04-11
@@ -15,9 +15,10 @@ import org.springframework.context.annotation.PropertySource;
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties(prefix = "easytoolsoft.springboot.template.common")
-@PropertySource("classpath:conf/springmvcmybatis/common.properties")
-public class CommonProperties {
-    private String item1;
-    private String item2;
+@ConfigurationProperties(prefix = "easytoolsoft.springboot.template.env")
+@PropertySource("classpath:conf/env.properties")
+public class EnvProperties {
+    private String appName;
+    private String name;
+    private String version;
 }

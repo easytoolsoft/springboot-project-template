@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.jerseymybatis;
+package com.easytoolsoft.springboot.template.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template.env")
-@PropertySource("classpath:conf/jerseymybatis/env.properties")
+@PropertySource("classpath:conf/env.properties")
 public class EnvProperties {
     private String appName;
     private String name;

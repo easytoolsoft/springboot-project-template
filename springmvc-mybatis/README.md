@@ -37,6 +37,8 @@ springmvc-mybatis是一个基于spring boot + spring mvc +  mybatis + mysql + sw
     - model: 视图模型对象类
 - resources
     - conf: 项目相关配置文件
+    - mybatis: mybaits mapper xml文件
+    - sql: database初始化表与数据文件
     - static: web静态资源文件
     - templates: thymeleaf html模板
 - swagger

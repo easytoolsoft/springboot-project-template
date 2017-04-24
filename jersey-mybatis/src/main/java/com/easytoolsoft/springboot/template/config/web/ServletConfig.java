@@ -1,6 +1,6 @@
 package com.easytoolsoft.springboot.template.config.web;
 
-import com.easytoolsoft.springboot.template.config.jerseymybatis.EnvProperties;
+import com.easytoolsoft.springboot.template.config.EnvProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 

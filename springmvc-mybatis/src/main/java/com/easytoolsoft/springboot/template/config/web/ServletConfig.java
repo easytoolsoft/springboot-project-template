@@ -1,13 +1,11 @@
 package com.easytoolsoft.springboot.template.config.web;
 
 import com.easytoolsoft.springboot.template.common.Constants;
-import com.easytoolsoft.springboot.template.config.springmvcmybatis.EnvProperties;
+import com.easytoolsoft.springboot.template.config.EnvProperties;
 import com.easytoolsoft.springboot.template.web.filter.ContextInitDataFilter;
-import org.apache.catalina.servlets.DefaultServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

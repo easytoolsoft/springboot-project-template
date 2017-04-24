@@ -5,6 +5,7 @@ import java.lang.reflect.Type;
 
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.actuate.health.Health;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -28,10 +29,15 @@ public class ResponseResult2HttpMessageConverter extends MappingJackson2HttpMess
         throws IOException, HttpMessageNotWritableException {
         if (object instanceof ResponseResult) {
             super.writeInternal(object, type, outputMessage);
-        } else {
-            final ResponseResult<Object> responseResult = new ResponseResult<>(object);
-            super.writeInternal(responseResult, type, outputMessage);
+            return;
         }
+
+        if (object instanceof Health) {
+            super.writeInternal(object, type, outputMessage);
+            return;
+        }
+        final ResponseResult<Object> responseResult = new ResponseResult<>(object);
+        super.writeInternal(responseResult, type, outputMessage);
     }
 
     @Override

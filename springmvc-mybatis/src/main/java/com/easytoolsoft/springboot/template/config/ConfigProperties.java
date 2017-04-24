@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.springmvcmybatis;
+package com.easytoolsoft.springboot.template.config;
 
 import javax.validation.Valid;
 
@@ -21,7 +21,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template")
-@PropertySource("classpath:conf/springmvcmybatis/config.properties")
+@PropertySource("classpath:conf/config.properties")
 public class ConfigProperties {
     @Valid
     private Shiro shiro = new Shiro();

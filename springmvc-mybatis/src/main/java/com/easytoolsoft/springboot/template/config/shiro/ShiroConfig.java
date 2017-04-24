@@ -4,7 +4,7 @@ import java.util.Map;
 
 import javax.servlet.Filter;
 
-import com.easytoolsoft.springboot.template.config.springmvcmybatis.ConfigProperties;
+import com.easytoolsoft.springboot.template.config.ConfigProperties;
 import com.easytoolsoft.springboot.template.shiro.filter.AjaxFormAuthenticationFilter;
 import com.easytoolsoft.springboot.template.shiro.filter.MembershipFilter;
 import com.easytoolsoft.springboot.template.shiro.security.MyShiroRealm;

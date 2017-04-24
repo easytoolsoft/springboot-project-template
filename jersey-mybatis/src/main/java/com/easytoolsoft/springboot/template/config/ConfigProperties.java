@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.jerseymybatis;
+package com.easytoolsoft.springboot.template.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,17 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * 公共配置类
+ * 自定义配置类
  *
  * @author zhiwei.deng
- * @date 2017-04-11
+ * @date 2017-04-19
  **/
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties(prefix = "easytoolsoft.springboot.template.common")
-@PropertySource("classpath:conf/jerseymybatis/common.properties")
-public class CommonProperties {
+@ConfigurationProperties(prefix = "easytoolsoft.springboot.template")
+@PropertySource("classpath:conf/config.properties")
+public class ConfigProperties {
     private String item1;
     private String item2;
 }

@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config.springmvcmybatis;
+package com.easytoolsoft.springboot.template.config;
 
 import javax.sql.DataSource;
 
@@ -29,7 +29,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 @MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "sqlSessionFactory")
 public class DataSourceConfig {
     static final String PACKAGE = "com.easytoolsoft.springboot.template.data";
-    static final String MAPPER_LOCATION = "classpath*:mybatis/mapper/springmvcmybatis/*.xml";
+    static final String MAPPER_LOCATION = "classpath*:mybatis/mapper/jerseymybatis/*.xml";
 
     @Primary
     @ConfigurationProperties(prefix = "easytoolsoft.springboot.template.datasource")
