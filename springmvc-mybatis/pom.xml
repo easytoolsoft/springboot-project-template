@@ -203,6 +203,8 @@
         </profile>
     </profiles>
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <finalName>${project.artifactId}</finalName>
         <filters>
             <filter>${props}</filter>
