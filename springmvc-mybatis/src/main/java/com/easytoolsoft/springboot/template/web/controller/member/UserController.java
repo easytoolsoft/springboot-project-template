@@ -13,7 +13,7 @@ import com.easytoolsoft.springboot.template.domain.User;
 import com.easytoolsoft.springboot.template.domain.example.UserExample;
 import com.easytoolsoft.springboot.template.service.UserService;
 import com.easytoolsoft.springboot.template.shiro.security.PasswordService;
-import com.easytoolsoft.springboot.template.web.common.CurrentUser;
+import com.easytoolsoft.springboot.template.annotation.CurrentUser;
 import com.easytoolsoft.springboot.template.web.controller.common.BaseController;
 import com.easytoolsoft.springboot.template.web.model.DataGridPager;
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;

@@ -3,8 +3,9 @@ package com.easytoolsoft.springboot.template.config.web;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import com.easytoolsoft.springboot.template.web.common.CurrentUserMethodArgumentResolver;
-import com.easytoolsoft.springboot.template.web.common.ResponseResult2HttpMessageConverter;
+import com.easytoolsoft.springboot.template.web.spring.converter.ResponseResult2HttpMessageConverter;
+import com.easytoolsoft.springboot.template.web.spring.resolver.CurrentUserMethodArgumentResolver;
+import com.easytoolsoft.springboot.template.web.spring.resolver.ResponseBodyWrapFactoryBean;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -58,5 +59,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Bean
     public HandlerMethodArgumentResolver currentUserMethodArgumentResolver() {
         return new CurrentUserMethodArgumentResolver();
+    }
+
+    @Bean
+    public ResponseBodyWrapFactoryBean getResponseBodyWrap() {
+        return new ResponseBodyWrapFactoryBean();
     }
 }

@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.web.handler;
+package com.easytoolsoft.springboot.template.web.spring.aop;
 
 import com.easytoolsoft.springboot.template.web.model.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author zhiwei.deng
  * @date 2017-04-11
  **/
-
 @Slf4j
 @ResponseBody
 @ControllerAdvice

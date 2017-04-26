@@ -1,5 +1,6 @@
-package com.easytoolsoft.springboot.template.web.common;
+package com.easytoolsoft.springboot.template.web.spring.resolver;
 
+import com.easytoolsoft.springboot.template.annotation.CurrentUser;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

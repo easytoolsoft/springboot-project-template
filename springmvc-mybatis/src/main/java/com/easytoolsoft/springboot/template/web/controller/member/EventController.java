@@ -43,8 +43,8 @@ public class EventController
 
     @ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")
     @OpLog(name = "分页获取系统日志列表")
-    @GetMapping(value = "/source/{source}")
-    public List<Event> getBySource(@PathVariable final String source) {
+    @GetMapping(value = "/{source}")
+    public List<Event> getBySource(@PathVariable("source") final String source) {
         EventExample example = new EventExample();
         example
             .createCriteria()

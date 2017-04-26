@@ -1,7 +1,7 @@
 package com.easytoolsoft.springboot.template.config.web;
 
 import com.easytoolsoft.springboot.template.common.Constants;
-import com.easytoolsoft.springboot.template.config.EnvProperties;
+import com.easytoolsoft.springboot.template.config.properties.EnvProperties;
 import com.easytoolsoft.springboot.template.web.filter.ContextInitDataFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

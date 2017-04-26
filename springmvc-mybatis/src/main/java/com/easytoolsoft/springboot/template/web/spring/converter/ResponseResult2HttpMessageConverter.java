@@ -1,11 +1,9 @@
-package com.easytoolsoft.springboot.template.web.common;
+package com.easytoolsoft.springboot.template.web.spring.converter;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 
-import com.easytoolsoft.springboot.template.web.model.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.actuate.health.Health;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -18,7 +16,6 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
  */
 @Slf4j
 public class ResponseResult2HttpMessageConverter extends MappingJackson2HttpMessageConverter {
-    private final String BASE_PATH = "/rest/";
 
     public ResponseResult2HttpMessageConverter() {
         log.debug("load {}", this.getClass().getName());
@@ -27,17 +24,7 @@ public class ResponseResult2HttpMessageConverter extends MappingJackson2HttpMess
     @Override
     protected void writeInternal(final Object object, final Type type, final HttpOutputMessage outputMessage)
         throws IOException, HttpMessageNotWritableException {
-        if (object instanceof ResponseResult) {
-            super.writeInternal(object, type, outputMessage);
-            return;
-        }
-
-        if (object instanceof Health) {
-            super.writeInternal(object, type, outputMessage);
-            return;
-        }
-        final ResponseResult<Object> responseResult = new ResponseResult<>(object);
-        super.writeInternal(responseResult, type, outputMessage);
+        super.writeInternal(object, type, outputMessage);
     }
 
     @Override

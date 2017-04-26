@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.config;
+package com.easytoolsoft.springboot.template.config.properties;
 
 import javax.validation.Valid;
 
@@ -21,7 +21,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Configuration
 @ConfigurationProperties(prefix = "easytoolsoft.springboot.template")
-@PropertySource("classpath:conf/config.properties")
+@PropertySource("classpath:conf/properties/config.properties")
 public class ConfigProperties {
     @Valid
     private Shiro shiro = new Shiro();

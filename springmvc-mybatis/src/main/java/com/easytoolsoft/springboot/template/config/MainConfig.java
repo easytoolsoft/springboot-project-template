@@ -1,5 +1,7 @@
 package com.easytoolsoft.springboot.template.config;
 
+import com.easytoolsoft.springboot.template.web.spring.resolver.ResponseBodyWrapFactoryBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,4 +14,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = {"com.easytoolsoft.springboot.template"})
 public class MainConfig {
+
 }
