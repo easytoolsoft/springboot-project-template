@@ -41,23 +41,24 @@ public class EventController
         return modelMap;
     }
 
-    @ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")
-    @OpLog(name = "分页获取系统日志列表")
-    @GetMapping(value = "/{source}")
-    public List<Event> getBySource(@PathVariable("source") final String source) {
-        EventExample example = new EventExample();
-        example
-            .createCriteria()
-            .andSourceEqualTo(source);
-        return this.service.getByExample(example);
-    }
+    //@ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")
+    //@OpLog(name = "分页获取系统日志列表")
+    //@GetMapping(value = "/{source}")
+    //public List<Event> getBySource(@PathVariable("source") final String source) {
+    //    EventExample example = new EventExample();
+    //    example
+    //        .createCriteria()
+    //        .andSourceEqualTo(source);
+    //    return this.service.getByExample(example);
+    //}
 
     @ApiOperation(value = "获取事件详细信息", notes = "根据url的id来获取事件详细信息")
     @ApiImplicitParam(name = "id", value = "事件ID", required = true, dataType = "Integer")
     @OpLog(name = "获取事件详细信息")
     @GetMapping(value = "/{id}")
     public Event getById(@PathVariable Integer id) {
-        return this.service.getById(id);
+        throw new RuntimeException("");
+        //return this.service.getById(id);
     }
 
     @ApiOperation(value = "删除事件", notes = "根据url的id来指定删除对象")
