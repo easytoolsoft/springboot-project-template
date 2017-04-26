@@ -14,7 +14,6 @@ import lombok.Data;
 @Data
 public class ResponseResult<T> implements Serializable {
     private String requestId = UUID.randomUUID().toString();
-    private int status = 200;
     private int code = 0;
     private String msg = "";
     private String detailMsg = "";
@@ -42,13 +41,12 @@ public class ResponseResult<T> implements Serializable {
         return this;
     }
 
-    public ResponseResult failure(int status, String msg, String detailMsg) {
-        return this.failure(status, -1, msg, detailMsg);
+    public ResponseResult failure(String msg, String detailMsg) {
+        return this.failure(-1, msg, detailMsg);
     }
 
-    public ResponseResult failure(int status, int code, String msg, String detailMsg) {
+    public ResponseResult failure(int code, String msg, String detailMsg) {
         this.success = false;
-        this.status = status;
         this.code = code;
         this.msg = msg;
         this.detailMsg = detailMsg;
