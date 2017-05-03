@@ -185,7 +185,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="update" parameterType="java.util.Map">
+    <update id="updateByExample" parameterType="java.util.Map">
         update ezrpt_member_permission
         <set>
             <include refid="Update_Set_From_Map"/>

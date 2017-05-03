@@ -41,7 +41,7 @@ public class Constants {
     public final static String ENV = "prod";
 
     /**
-     *
+     * 当前用户配置项
      */
     public static final String CURRENT_USER = "user";
 }
