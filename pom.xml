@@ -41,8 +41,19 @@
         <name>easytoolsoft Inc.</name>
         <url>http://www.easytoolsoft.com/</url>
     </organization>
-    <ciManagement>
-        <system></system>
-        <url></url>
-    </ciManagement>
+    <repositories>
+    <repository>
+        <id>snapshots</id>
+        <name>Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+    </repositories>
 </project>
