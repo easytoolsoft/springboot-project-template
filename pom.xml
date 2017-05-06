@@ -12,6 +12,18 @@
     <artifactId>springboot-project-template</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>common</module>
+        <module>common</module>
+        <module>data</module>
+        <module>cache</module>
+        <module>nosql</module>
+        <module>web</module>
+        <module>actuator</module>
+        <module>security</module>
+        <module>messaging</module>
+        <module>transactions</module>
+    </modules>
     <properties>
         <project.github.group>https://github.com/easytoolsoft</project.github.group>
         <project.github.url>https://github.com/easytoolsoft/springboot-project-template.git</project.github.url>
@@ -41,8 +53,4 @@
         <name>easytoolsoft Inc.</name>
         <url>http://www.easytoolsoft.com/</url>
     </organization>
-    <ciManagement>
-        <system></system>
-        <url></url>
-    </ciManagement>
 </project>
