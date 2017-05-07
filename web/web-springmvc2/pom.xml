@@ -11,7 +11,7 @@
     <artifactId>web-springmvc2</artifactId>
     <description>spring boot + spring mvc + mybatis + shiro + thymeleaf3 + i18n + swagger+ docker</description>
     <properties>
-        <start-class>com.easytoolsoft.springboot.template.WebSpringMVC2Application</start-class>
+        <start-class>com.easytoolsoft.template.web.springmvc2.WebSpringMVC2Application</start-class>
         <docker.image.prefix>easytoolsoft</docker.image.prefix>
         <push.image>false</push.image>
     </properties>
@@ -160,16 +160,6 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>hamcrest-core</artifactId>
-                    <groupId>org.hamcrest</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>mockito-core</artifactId>
-                    <groupId>org.mockito</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.github.stefanbirkner</groupId>
