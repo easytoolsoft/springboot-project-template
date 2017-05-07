@@ -4,21 +4,21 @@ some springboot project template(基于spring boot框架的一些项目模板,�
 
 - actuator  
 Spring Boot Actuator应用示例
-- cache 
+- cache   
 Spring Boot与缓存应用示例
-- common 
+- common   
 公共类模块
-- data 
+- data   
 Spring Boot与关系型数据（mybatis,jpa,jdbctemplate)应用示例
-- messaging 
+- messaging   
 Spring Boot与消息队列应用示例
-- nosql 
+- nosql   
 Spring Boot与与NoSQL数据库应用示例
-- security 
+- security   
 Spring Boot与与安全框架(shiro,spring security)应用示例
-- transactions 
+- transactions   
 Spring Boot与与分布式事务应用示例
-- web 
+- web   
 Spring Boot与与Web应用示例
-- DOCS   
+- DOCS     
 项目文档
