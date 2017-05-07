@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import com.easytoolsoft.springboot.template.common.Constants;
-import com.easytoolsoft.springboot.template.service.MembershipFacade;
+import com.easytoolsoft.template.common.Constants;
+import com.easytoolsoft.template.common.auth.MembershipFacade;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.PathMatchingFilter;
 

@@ -11,7 +11,11 @@
     <artifactId>data-mybatis</artifactId>
     <packaging>jar</packaging>
     <dependencies>
-        <!-- easytoolsoft commons -->
+        <!-- easytoolsoft -->
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.easytoolsoft</groupId>
             <artifactId>easytoolsoft-mybatis</artifactId>

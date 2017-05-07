@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.annotation;
+package com.easytoolsoft.template.common.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

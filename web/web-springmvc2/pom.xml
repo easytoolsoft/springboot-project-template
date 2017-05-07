@@ -19,6 +19,18 @@
         <!-- easytoolsoft commons -->
         <dependency>
             <groupId>com.easytoolsoft</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>data-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>security-shiro</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
             <artifactId>easytoolsoft-mybatis</artifactId>
         </dependency>
         <!-- spring boot -->
@@ -50,6 +62,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-java8time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -130,19 +150,6 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-        </dependency>
-        <!-- shiro -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
         </dependency>
         <!-- test -->
         <dependency>

@@ -1,8 +1,8 @@
 package com.easytoolsoft.template.web.springmvc2.config.web;
 
-import com.easytoolsoft.springboot.template.common.Constants;
+import com.easytoolsoft.template.common.Constants;
+import com.easytoolsoft.template.common.filter.ContextInitDataFilter;
 import com.easytoolsoft.template.web.springmvc2.config.properties.EnvProperties;
-import com.easytoolsoft.template.web.springmvc2.filter.ContextInitDataFilter;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;

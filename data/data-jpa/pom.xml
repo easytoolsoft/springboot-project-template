@@ -11,6 +11,11 @@
     <artifactId>data-jpa</artifactId>
     <packaging>jar</packaging>
     <dependencies>
+        <!-- current project -->
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
         <!-- spring boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

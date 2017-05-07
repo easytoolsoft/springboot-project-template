@@ -51,15 +51,15 @@ public class ExceptionAdvice {
         return new ResponseResult().failure(415, "不支持当前媒体类型", e.toString());
     }
 
-    /**
-     * 401 - Unauthorized
-     */
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    @ExceptionHandler(UnauthorizedException.class)
-    public ResponseResult handleUnauthorizedException(UnauthorizedException e) {
-        log.error("没有权限", e);
-        return new ResponseResult().failure(401, "对不起!您没有权限,访问拒绝.", e.toString());
-    }
+    ///**
+    // * 401 - Unauthorized
+    // */
+    //@ResponseStatus(HttpStatus.UNAUTHORIZED)
+    //@ExceptionHandler(UnauthorizedException.class)
+    //public ResponseResult handleUnauthorizedException(UnauthorizedException e) {
+    //    log.error("没有权限", e);
+    //    return new ResponseResult().failure(401, "对不起!您没有权限,访问拒绝.", e.toString());
+    //}
 
     /**
      * 500 - Internal Server Error

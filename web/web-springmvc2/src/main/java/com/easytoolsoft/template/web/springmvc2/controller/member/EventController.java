@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
-import com.easytoolsoft.springboot.template.annotation.OpLog;
-import com.easytoolsoft.springboot.template.domain.Event;
-import com.easytoolsoft.springboot.template.domain.example.EventExample;
-import com.easytoolsoft.springboot.template.service.EventService;
+import com.easytoolsoft.template.common.annotation.OpLog;
+import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.template.data.mybatis.domain.Event;
+import com.easytoolsoft.template.data.mybatis.domain.example.EventExample;
+import com.easytoolsoft.template.data.mybatis.service.EventService;
 import com.easytoolsoft.template.web.springmvc2.controller.common.BaseController;
 import com.easytoolsoft.template.web.springmvc2.model.DataGridPager;
-import com.easytoolsoft.template.web.springmvc2.model.ResponseResult;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,17 +40,6 @@ public class EventController
         modelMap.put("rows", list);
         return modelMap;
     }
-
-    //@ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")
-    //@OpLog(name = "分页获取系统日志列表")
-    //@GetMapping(value = "/{source}")
-    //public List<Event> getBySource(@PathVariable("source") final String source) {
-    //    EventExample example = new EventExample();
-    //    example
-    //        .createCriteria()
-    //        .andSourceEqualTo(source);
-    //    return this.service.getByExample(example);
-    //}
 
     @ApiOperation(value = "获取事件详细信息", notes = "根据url的id来获取事件详细信息")
     @ApiImplicitParam(name = "id", value = "事件ID", required = true, dataType = "Integer")

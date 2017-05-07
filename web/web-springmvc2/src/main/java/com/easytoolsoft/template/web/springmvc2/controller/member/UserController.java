@@ -8,15 +8,15 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
-import com.easytoolsoft.springboot.template.annotation.OpLog;
-import com.easytoolsoft.springboot.template.domain.User;
-import com.easytoolsoft.springboot.template.domain.example.UserExample;
-import com.easytoolsoft.springboot.template.service.UserService;
-import com.easytoolsoft.template.web.springmvc2.shiro.security.PasswordService;
-import com.easytoolsoft.springboot.template.annotation.CurrentUser;
+import com.easytoolsoft.template.common.annotation.CurrentUser;
+import com.easytoolsoft.template.common.annotation.OpLog;
+import com.easytoolsoft.template.common.auth.PasswordService;
+import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.template.data.mybatis.domain.User;
+import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
+import com.easytoolsoft.template.data.mybatis.service.UserService;
 import com.easytoolsoft.template.web.springmvc2.controller.common.BaseController;
 import com.easytoolsoft.template.web.springmvc2.model.DataGridPager;
-import com.easytoolsoft.template.web.springmvc2.model.ResponseResult;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController
     extends BaseController<UserService, User, UserExample, Integer> {
 
-    @Resource
+    @Resource(name = "ShiroPasswordService")
     private PasswordService passwordService;
 
     @ApiOperation(value = "分页获取系统日志列表", notes = "分页获取系统日志列表")

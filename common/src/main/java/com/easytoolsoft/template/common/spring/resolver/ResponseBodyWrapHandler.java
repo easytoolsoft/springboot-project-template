@@ -1,6 +1,6 @@
 package com.easytoolsoft.template.common.spring.resolver;
 
-import com.easytoolsoft.template.web.springmvc2.model.ResponseResult;
+import com.easytoolsoft.template.common.model.ResponseResult;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;

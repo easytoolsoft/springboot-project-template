@@ -1,4 +1,4 @@
-package com.easytoolsoft.springboot.template.annotation;
+package com.easytoolsoft.template.common.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -6,7 +6,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.easytoolsoft.springboot.template.common.Constants;
+import com.easytoolsoft.template.common.Constants;
 
 /**
  * 绑定当前登录的用户

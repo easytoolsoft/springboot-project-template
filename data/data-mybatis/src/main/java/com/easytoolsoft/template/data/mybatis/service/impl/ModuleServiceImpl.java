@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.mybatis.service.AbstractCrudService;
-import com.easytoolsoft.template.data.mybatis.common.tree.EasyUITreeNode;
+import com.easytoolsoft.template.common.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.repos.ModuleRepository;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.example.ModuleExample;

@@ -4,11 +4,11 @@ import java.util.Map;
 
 import javax.servlet.Filter;
 
+import com.easytoolsoft.template.security.shiro.RetryLimitHashedCredentialsMatcher;
+import com.easytoolsoft.template.security.shiro.filter.AjaxFormAuthenticationFilter;
+import com.easytoolsoft.template.security.shiro.filter.MembershipFilter;
 import com.easytoolsoft.template.web.springmvc2.config.properties.ConfigProperties;
-import com.easytoolsoft.template.web.springmvc2.shiro.filter.AjaxFormAuthenticationFilter;
-import com.easytoolsoft.template.web.springmvc2.shiro.filter.MembershipFilter;
-import com.easytoolsoft.template.web.springmvc2.shiro.security.MyShiroRealm;
-import com.easytoolsoft.template.web.springmvc2.shiro.security.RetryLimitHashedCredentialsMatcher;
+import com.easytoolsoft.template.web.springmvc2.shiro.MyShiroRealm;
 import com.google.common.collect.Maps;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.codec.Base64;

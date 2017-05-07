@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,15 +29,17 @@ import org.springframework.transaction.support.TransactionTemplate;
 @EnableTransactionManagement
 @MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "sqlSessionFactory")
 public class DataSourceConfig {
-    static final String PACKAGE = "com.easytoolsoft.springboot.template.data";
-    static final String MAPPER_LOCATION = "classpath*:mybatis/mapper/springmvcmybatis/*.xml";
+    static final String PACKAGE = "com.easytoolsoft.template.data.mybatis.repos";
+    static final String MAPPER_LOCATION = "classpath*:mapper/com/easytoolsoft/template/data/mybatis/*.xml";
 
-    @Primary
-    @ConfigurationProperties(prefix = "easytoolsoft.springboot.template.datasource")
+    @Value("${web.springmvc2.datasource.type}")
+    private Class<? extends DataSource> dataSourceType;
+
+    @ConfigurationProperties(prefix = "web.springmvc2.datasource")
     @Bean(name = "dataSource")
     public DataSource dataSource() {
         //return DataSourceBuilder.create()
-        //    .type(com.alibaba.druid.pool.DruidDataSource.class)
+        //    .type(this.dataSourceType)
         //    .build();
 
         //为了演示使用嵌入数据，

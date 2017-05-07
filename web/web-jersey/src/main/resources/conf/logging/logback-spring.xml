@@ -4,7 +4,7 @@
     <appender name="FILE_ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>@logging.file@</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%8.8t|%c.%M:%L] %m%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%t|%c.%M:%L] %m%n</pattern>
             <charset>@logging.charset@</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -20,7 +20,7 @@
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>@logging.file.err@</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%8.8t|%c.%M:%L] %m%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%t|%c.%M:%L] %m%n</pattern>
             <charset>@logging.charset@</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -43,7 +43,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.easytoolsoft.springboot.template" level="@logging.level.com.easytoolsoft.springboot.template@"/>
+    <logger name="com.easytoolsoft.template.web.jersey" level="@logging.level.com.easytoolsoft.template.web.jersey@"/>
     <logger name="org.mybatis" level="@logging.level.org.mybatis@"/>
 
     <root level="@logging.level.root@">

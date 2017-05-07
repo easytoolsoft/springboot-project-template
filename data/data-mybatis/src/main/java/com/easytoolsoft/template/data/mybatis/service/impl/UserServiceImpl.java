@@ -3,11 +3,11 @@ package com.easytoolsoft.template.data.mybatis.service.impl;
 import javax.annotation.Resource;
 
 import com.easytoolsoft.mybatis.service.AbstractCrudService;
+import com.easytoolsoft.template.common.auth.PasswordService;
 import com.easytoolsoft.template.data.mybatis.repos.UserRepository;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
-import com.easytoolsoft.template.data.mybatis.shiro.security.PasswordService;
 import org.springframework.stereotype.Service;
 
 /**

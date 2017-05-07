@@ -3,8 +3,8 @@ package com.easytoolsoft.template.web.springmvc2.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import com.easytoolsoft.springboot.template.service.EventService;
-import com.easytoolsoft.template.web.springmvc2.model.ResponseResult;
+import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.template.data.mybatis.service.EventService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/dynamic")
 public class ResourceController {
-    @GetMapping(value = {"/js/init.js"})
+    @GetMapping(value = {"/resource/init.js"})
     public String initJs(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
         model.addAttribute("lng", request.getLocale());
         response.setContentType("application/x-javascript;charset=utf-8");

@@ -3,16 +3,12 @@ package com.easytoolsoft.template.common.spring.aop;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import com.easytoolsoft.springboot.template.annotation.OpLog;
-import com.easytoolsoft.springboot.template.domain.Event;
-import com.easytoolsoft.springboot.template.service.EventService;
+import com.easytoolsoft.template.common.annotation.OpLog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -33,10 +29,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Aspect
 @Component
 public class OpLogAspect {
-    @Resource
-    private EventService eventService;
-
-    @Pointcut("@annotation(com.easytoolsoft.springboot.template.annotation.OpLog)")
+    @Pointcut("@annotation(com.easytoolsoft.template.common.annotation.OpLog)")
     public void pointcut() {
     }
 
@@ -58,31 +51,24 @@ public class OpLogAspect {
         }
     }
 
-    private void logEvent(final JoinPoint joinPoint, final String level, String message) {
+    protected void logEvent(final JoinPoint joinPoint, final String level, String message) {
         try {
-            final HttpServletRequest req = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes())
-                .getRequest();
+            final HttpServletRequest req =
+                ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
             final Map<String, String> methodInfo = this.getMethodInfo(joinPoint);
             final String source = MapUtils.getString(methodInfo, "source", "");
             message = String.format("name:%s;params:%s;desc:%s;detail:%s",
                 MapUtils.getString(methodInfo, "name", ""),
                 MapUtils.getString(methodInfo, "params", ""),
                 MapUtils.getString(methodInfo, "desc", ""), message);
-            final Event event = Event.builder()
-                .source(source)
-                .account("")
-                .userId(0)
-                .message(message)
-                .level(level)
-                .url(req.getRequestURL().toString())
-                .gmtCreated(new Date()).build();
-            this.eventService.add(event);
+            log.info("event source:{},level:{},url:{},message:{}",
+                source, level, req.getRequestURL().toString(), message);
         } catch (final Exception e) {
             log.error("记录系统事件出错", e);
         }
     }
 
-    private Map<String, String> getMethodInfo(final JoinPoint joinPoint) throws Exception {
+    protected Map<String, String> getMethodInfo(final JoinPoint joinPoint) throws Exception {
         final Map<String, String> methodInfoMap = new HashMap<>(3);
         final String targetName = joinPoint.getTarget().getClass().getName();
         final String methodName = joinPoint.getSignature().getName();
@@ -105,7 +91,7 @@ public class OpLogAspect {
         return methodInfoMap;
     }
 
-    private String getExceptionStack(final Throwable ex) {
+    protected String getExceptionStack(final Throwable ex) {
         String stackInfo = "";
         try (StringWriter out = new StringWriter()) {
             final PrintWriter printWriter = new PrintWriter(out);

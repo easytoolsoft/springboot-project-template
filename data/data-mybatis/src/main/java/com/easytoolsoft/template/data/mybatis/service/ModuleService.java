@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.mybatis.service.CrudService;
-import com.easytoolsoft.template.data.mybatis.common.tree.EasyUITreeNode;
+import com.easytoolsoft.template.common.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.example.ModuleExample;
 

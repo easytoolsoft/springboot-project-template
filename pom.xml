@@ -27,6 +27,46 @@
         <project.github.group>https://github.com/easytoolsoft</project.github.group>
         <project.github.url>https://github.com/easytoolsoft/springboot-project-template.git</project.github.url>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- current project -->
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>data-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>data-jpa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>data-jdbctemplate</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>security-shiro</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>security-springsecurity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>security-jwt</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
