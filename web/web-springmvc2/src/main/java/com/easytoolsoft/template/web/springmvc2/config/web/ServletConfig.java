@@ -48,8 +48,8 @@ public class ServletConfig {
         final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new ContextInitDataFilter());
         registrationBean.addUrlPatterns("/*");
-        registrationBean.addInitParameter(Constants.ENV, this.envProperties.getName());
-        registrationBean.addInitParameter(Constants.VERSION, this.envProperties.getVersion());
+        registrationBean.addInitParameter(Constants.ENV_ITEM, this.envProperties.getName());
+        registrationBean.addInitParameter(Constants.VERSION_ITEM, this.envProperties.getVersion());
         registrationBean.setName("contextInitDataFilter");
         return registrationBean;
     }

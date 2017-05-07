@@ -45,7 +45,6 @@ public class LoginController {
     @GetMapping(value = {"/login"})
     public String login(final Model model, final HttpServletRequest request, final HttpServletResponse response) {
         LocaleUtils.setInitLocale(request, response);
-        log.info(LocaleUtils.getMessage("view.member.login.account"));
         return "member/login";
     }
 

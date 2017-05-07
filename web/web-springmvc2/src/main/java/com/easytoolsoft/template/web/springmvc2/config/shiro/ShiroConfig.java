@@ -39,7 +39,7 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilter() {
         final ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager());
-        shiroFilterFactoryBean.setLoginUrl("/account/login");
+        shiroFilterFactoryBean.setLoginUrl("/member/login");
         shiroFilterFactoryBean.setSuccessUrl("/home/index");
         shiroFilterFactoryBean.setUnauthorizedUrl("/error/unauthorized");
 
@@ -49,7 +49,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         final Map<String, String> chains = Maps.newLinkedHashMap();
-        chains.put("/account/logout", "logout");
+        chains.put("/member/logout", "logout");
         chains.put("/", configProperties.getShiro().getFilters());
         chains.put("/home/**", configProperties.getShiro().getFilters());
         chains.put("/views/**", configProperties.getShiro().getFilters());
