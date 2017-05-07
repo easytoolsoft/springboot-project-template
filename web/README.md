@@ -1,7 +1,5 @@
 web 模块
-================================================
-
-# 概述
+================================================  
 Web模块提供几个spring boot web application的模板项目
 - web-jersey  
 基于spring boot + jersey +  mybatis + mysql + swagger技术的demo项目
