@@ -44,8 +44,8 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/error/unauthorized");
 
         final Map<String, Filter> filters = Maps.newHashMap();
-        filters.put("authc", authcFilter());
-        filters.put("membership", new MembershipFilter());
+        filters.put("authc", this.authcFilter());
+        filters.put("membership", this.membershipFilter());
         shiroFilterFactoryBean.setFilters(filters);
 
         final Map<String, String> chains = Maps.newLinkedHashMap();
@@ -67,6 +67,11 @@ public class ShiroConfig {
         authcFilter.setRememberMeParam("rememberMe");
         authcFilter.setFailureKeyAttribute("shiroLoginFailure");
         return authcFilter;
+    }
+
+    @Bean
+    public MembershipFilter membershipFilter() {
+        return new MembershipFilter();
     }
 
     @Bean

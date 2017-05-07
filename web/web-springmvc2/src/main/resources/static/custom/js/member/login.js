@@ -68,7 +68,7 @@ var LoginMVC = {
             tipsContainer.show();
         },
         login: function () {
-            if ($('#login-form').validate().form()) {
+            if ($('#login_form').validate().form()) {
                 var data = {
                     "account": $("#account").val(),
                     "password": $("#password").val(),
