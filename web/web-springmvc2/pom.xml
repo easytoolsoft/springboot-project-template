@@ -212,6 +212,7 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <excludes>
+                    <exclude>messages/**</exclude>
                     <exclude>mybatis/**</exclude>
                     <exclude>sql/**</exclude>
                     <exclude>static/**</exclude>
@@ -222,6 +223,7 @@
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
                 <includes>
+                    <include>messages/**</include>
                     <include>mybatis/**</include>
                     <include>sql/**</include>
                     <include>static/**</include>
