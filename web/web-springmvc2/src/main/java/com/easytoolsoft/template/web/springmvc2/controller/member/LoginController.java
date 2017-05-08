@@ -1,5 +1,7 @@
 package com.easytoolsoft.template.web.springmvc2.controller.member;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -52,6 +54,12 @@ public class LoginController {
     public String logout() {
         SecurityUtils.getSubject().logout();
         return "/member/login";
+    }
+
+    @ResponseBody
+    @GetMapping(value = "/pageMessages")
+    public Map<String, String> getPageMessageSource() {
+        return LocaleUtils.getMessages("view.member.login", "ctrl.member.login");
     }
 
     @ResponseBody

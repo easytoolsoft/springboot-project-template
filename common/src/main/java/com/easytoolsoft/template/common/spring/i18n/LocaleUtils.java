@@ -1,6 +1,7 @@
 package com.easytoolsoft.template.common.spring.i18n;
 
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,7 @@ public class LocaleUtils {
 
     /**
      * 根据当前request对象中的locale(Header的Accept属性)初始化系统国际化语言区域环境
+     *
      * @param request  当前请求对象
      * @param response 当前响应对象
      */
@@ -106,5 +108,14 @@ public class LocaleUtils {
     public static String getMessage(final String code, final Object[] args, final String defaultMessage) {
         final Locale locale = LocaleContextHolder.getLocale();
         return messageSource.getMessage(code, args, defaultMessage, locale);
+    }
+
+    /**
+     * @param codePrefixes
+     * @return
+     */
+    public static Map<String, String> getMessages(String... codePrefixes) {
+        final Locale locale = LocaleContextHolder.getLocale();
+        return ((MyResourceBundleMessageSource)messageSource).getMessages(locale, codePrefixes);
     }
 }

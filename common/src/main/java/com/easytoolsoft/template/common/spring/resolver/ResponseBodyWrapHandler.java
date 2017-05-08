@@ -12,11 +12,12 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  * @date 2017-04-26
  **/
 public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler {
-    private final String BASE_PACKAGE = "com.easytoolsoft.springboot.template.web";
+    private final String basePackage;
     private final HandlerMethodReturnValueHandler delegate;
 
-    public ResponseBodyWrapHandler(HandlerMethodReturnValueHandler delegate) {
+    public ResponseBodyWrapHandler(HandlerMethodReturnValueHandler delegate, String basePackage) {
         this.delegate = delegate;
+        this.basePackage = basePackage;
     }
 
     @Override
@@ -28,7 +29,7 @@ public class ResponseBodyWrapHandler implements HandlerMethodReturnValueHandler 
     public void handleReturnValue(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer,
                                   NativeWebRequest webRequest) throws Exception {
         String declaringClazzName = returnType.getMethod().getDeclaringClass().getName();
-        if (StringUtils.startsWith(declaringClazzName, this.BASE_PACKAGE)) {
+        if (StringUtils.startsWith(declaringClazzName, this.basePackage)) {
             if (returnValue instanceof ResponseResult) {
                 delegate.handleReturnValue(returnValue, returnType, mavContainer, webRequest);
             } else {
