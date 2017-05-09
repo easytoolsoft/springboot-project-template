@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<th:block layout:fragment="header">
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="header">
     <link rel="shortcut icon" href="../../static/favicon.ico" th:href="@{/favicon.ico}"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
     <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
@@ -10,8 +9,10 @@
     <link th:href="@{/images/meta_icons/apple-touch-icon.png}" rel="apple-touch-icon-precomposed"/>
     <link th:href="@{/images/meta_icons/apple-touch-icon-57x57.png}" rel="apple-touch-icon-precomposed" sizes="57x57"/>
     <link th:href="@{/images/meta_icons/apple-touch-icon-72x72.png}" rel="apple-touch-icon-precomposed" sizes="72x72"/>
-    <link th:href="@{/images/meta_icons/apple-touch-icon-114x114.png}" rel="apple-touch-icon-precomposed" sizes="114x114"/>
-    <link th:href="@{/images/meta_icons/apple-touch-icon-144x144.png}" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+    <link th:href="@{/images/meta_icons/apple-touch-icon-114x114.png}" rel="apple-touch-icon-precomposed"
+          sizes="114x114"/>
+    <link th:href="@{/images/meta_icons/apple-touch-icon-144x144.png}" rel="apple-touch-icon-precomposed"
+          sizes="144x144"/>
     <!-- / bootstrap [required] -->
     <link th:href="@{/stylesheets/bootstrap/bootstrap.css}" media="all" rel="stylesheet"/>
     <!-- / theme file [required] -->
