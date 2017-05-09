@@ -1,4 +1,4 @@
-package com.easytoolsoft.template.common.auth;
+package com.easytoolsoft.template.common.security;
 
 /**
  * @author zhiwei.deng

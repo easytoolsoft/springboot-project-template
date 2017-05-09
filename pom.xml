@@ -26,7 +26,7 @@
     <properties>
         <project.github.group>https://github.com/easytoolsoft</project.github.group>
         <project.github.url>https://github.com/easytoolsoft/springboot-project-template.git</project.github.url>
-        <spring-session.version>1.3.1</spring-session.version>
+        <spring-session.version>1.3.1.RELEASE</spring-session.version>
     </properties>
     <dependencyManagement>
         <dependencies>

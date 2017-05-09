@@ -1,6 +1,6 @@
 package com.easytoolsoft.template.security.shiro;
 
-import com.easytoolsoft.template.common.auth.PasswordService;
+import com.easytoolsoft.template.common.security.PasswordService;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;

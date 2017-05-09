@@ -5,7 +5,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import com.easytoolsoft.template.common.Constants;
-import com.easytoolsoft.template.common.auth.MembershipFacade;
+import com.easytoolsoft.template.common.security.MembershipFacade;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.PathMatchingFilter;
 

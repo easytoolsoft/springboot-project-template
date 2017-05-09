@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.template.common.annotation.CurrentUser;
 import com.easytoolsoft.template.common.annotation.OpLog;
-import com.easytoolsoft.template.common.auth.PasswordService;
+import com.easytoolsoft.template.common.security.PasswordService;
 import com.easytoolsoft.template.common.model.ResponseResult;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;

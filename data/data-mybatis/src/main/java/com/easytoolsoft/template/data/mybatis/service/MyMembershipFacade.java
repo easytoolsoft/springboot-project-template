@@ -3,7 +3,7 @@ package com.easytoolsoft.template.data.mybatis.service;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.easytoolsoft.template.common.auth.MembershipFacade;
+import com.easytoolsoft.template.common.security.MembershipFacade;
 import com.easytoolsoft.template.common.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 
