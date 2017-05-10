@@ -11,11 +11,11 @@ import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
-import com.easytoolsoft.template.common.annotation.CurrentUser;
-import com.easytoolsoft.template.common.annotation.OpLog;
-import com.easytoolsoft.template.common.model.ResponseResult;
-import com.easytoolsoft.template.common.pair.IdNamePair;
-import com.easytoolsoft.template.common.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.support.annotation.CurrentUser;
+import com.easytoolsoft.commons.support.annotation.OpLog;
+import com.easytoolsoft.commons.support.model.ResponseResult;
+import com.easytoolsoft.commons.lang.pair.IdNamePair;
+import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.Permission;
 import com.easytoolsoft.template.data.mybatis.domain.Role;

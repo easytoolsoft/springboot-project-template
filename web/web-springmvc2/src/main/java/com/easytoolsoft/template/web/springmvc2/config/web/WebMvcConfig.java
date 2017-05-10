@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import com.easytoolsoft.commons.support.resolver.CurrentUserMethodArgumentResolver;
+import com.easytoolsoft.commons.support.resolver.ResponseBodyWrapFactoryBean;
+import com.easytoolsoft.template.web.springmvc2.spring.converter.CustomMappingJackson2HttpMessageConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,8 +49,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public ResponseResult2HttpMessageConverter messageConverter() {
-        final ResponseResult2HttpMessageConverter converter = new ResponseResult2HttpMessageConverter();
+    public CustomMappingJackson2HttpMessageConverter messageConverter() {
+        final CustomMappingJackson2HttpMessageConverter converter = new CustomMappingJackson2HttpMessageConverter();
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         converter.setObjectMapper(objectMapper);

@@ -9,10 +9,10 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
-import com.easytoolsoft.template.common.annotation.CurrentUser;
-import com.easytoolsoft.template.common.annotation.OpLog;
-import com.easytoolsoft.template.common.security.PasswordService;
-import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.commons.support.annotation.CurrentUser;
+import com.easytoolsoft.commons.support.annotation.OpLog;
+import com.easytoolsoft.commons.support.security.PasswordService;
+import com.easytoolsoft.commons.support.model.ResponseResult;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
