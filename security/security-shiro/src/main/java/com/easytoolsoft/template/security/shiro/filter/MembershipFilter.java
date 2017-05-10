@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import com.easytoolsoft.template.common.Constants;
-import com.easytoolsoft.template.common.security.MembershipFacade;
+import com.easytoolsoft.commons.support.consts.UserAuthConsts;
+import com.easytoolsoft.commons.support.security.MembershipFacade;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.PathMatchingFilter;
 
@@ -23,7 +23,7 @@ public class MembershipFilter extends PathMatchingFilter {
     protected boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue)
         throws Exception {
         String account = (String)SecurityUtils.getSubject().getPrincipal();
-        request.setAttribute(Constants.CURRENT_USER, membershipFacade.getUser(account));
+        request.setAttribute(UserAuthConsts.CURRENT_USER, membershipFacade.getUser(account));
         return true;
     }
 }

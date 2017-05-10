@@ -1,6 +1,6 @@
 package com.easytoolsoft.template.security.shiro;
 
-import com.easytoolsoft.template.common.security.PasswordService;
+import com.easytoolsoft.commons.support.security.PasswordService;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @date 2017-03-25
  */
 @Service("ShiroPasswordService")
-public class PasswordServiceImpl implements PasswordService {
+public class ShiroPasswordService implements PasswordService {
     private RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
     private String algorithmName = "md5";
     private int hashIterations = 2;
