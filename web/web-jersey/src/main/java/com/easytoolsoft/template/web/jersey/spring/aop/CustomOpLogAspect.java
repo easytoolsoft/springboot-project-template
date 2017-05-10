@@ -28,7 +28,7 @@ public class CustomOpLogAspect extends OpLogAspect {
     private EventService eventService;
 
     @Override
-    protected void logEvent(final  eventParameter) {
+    protected void logEvent(final EventParameter eventParameter) {
         final HttpServletRequest req =
             ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         final User user = (User)req.getAttribute(UserAuthConsts.CURRENT_USER);

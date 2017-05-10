@@ -5,11 +5,11 @@ import java.util.Date;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import com.okcoin.commons.support.aop.OpLogAspect;
-import com.okcoin.commons.support.consts.UserAuthConsts;
-import com.okcoin.exchange.boss.member.domain.Event;
-import com.okcoin.exchange.boss.member.domain.User;
-import com.okcoin.exchange.boss.member.service.EventService;
+import com.easytoolsoft.commons.support.aop.OpLogAspect;
+import com.easytoolsoft.commons.support.consts.UserAuthConsts;
+import com.easytoolsoft.template.data.mybatis.domain.Event;
+import com.easytoolsoft.template.data.mybatis.domain.User;
+import com.easytoolsoft.template.data.mybatis.service.EventService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;

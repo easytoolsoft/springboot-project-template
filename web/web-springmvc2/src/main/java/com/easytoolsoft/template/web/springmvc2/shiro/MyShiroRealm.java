@@ -2,7 +2,7 @@ package com.easytoolsoft.template.web.springmvc2.shiro;
 
 import javax.annotation.Resource;
 
-import com.easytoolsoft.template.common.security.MembershipFacade;
+import com.easytoolsoft.commons.support.security.MembershipFacade;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

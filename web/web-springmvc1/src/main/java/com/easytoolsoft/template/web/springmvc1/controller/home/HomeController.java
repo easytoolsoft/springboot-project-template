@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import com.easytoolsoft.commons.support.annotation.CurrentUser;
-import com.easytoolsoft.commons.support.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.service.MembershipFacadeService;

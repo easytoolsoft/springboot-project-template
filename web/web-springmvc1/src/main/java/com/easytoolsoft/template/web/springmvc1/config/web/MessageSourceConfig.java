@@ -1,4 +1,4 @@
-package com.easytoolsoft.template.web.springmvc2.config.web;
+package com.easytoolsoft.template.web.springmvc1.config.web;
 
 import java.nio.charset.Charset;
 

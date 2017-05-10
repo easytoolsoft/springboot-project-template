@@ -9,7 +9,7 @@ import java.util.Map;
 import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.commons.support.annotation.OpLog;
 import com.easytoolsoft.commons.support.model.ResponseResult;
-import com.easytoolsoft.commons.support.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.example.ModuleExample;
 import com.easytoolsoft.template.data.mybatis.service.ModuleService;

@@ -1,7 +1,7 @@
 package com.easytoolsoft.template.web.springmvc1.spring.aop;
 
-import com.okcoin.commons.support.aop.ExceptionAdvice;
-import com.okcoin.commons.support.model.ResponseResult;
+import com.easytoolsoft.commons.support.aop.ExceptionAdvice;
+import com.easytoolsoft.commons.support.model.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;

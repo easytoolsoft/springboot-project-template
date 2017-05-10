@@ -1,5 +1,7 @@
 package com.easytoolsoft.template.web.springmvc1.config.web;
 
+import com.easytoolsoft.commons.support.consts.AppEnvConsts;
+import com.easytoolsoft.commons.support.filter.ContextInitDataFilter;
 import com.easytoolsoft.template.web.springmvc1.config.properties.EnvProperties;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +48,9 @@ public class ServletConfig {
         final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new ContextInitDataFilter());
         registrationBean.addUrlPatterns("/*");
-        registrationBean.addInitParameter(AppEnvConstants, this.envProperties.getName());
-        registrationBean.addInitParameter(AppEnvConstants.ENV_ITEM, this.envProperties.getName());
-        registrationBean.addInitParameter(AppEnvConstants.VERSION_ITEM, this.envProperties.getVersion());
+        registrationBean.addInitParameter(AppEnvConsts.APP_NAME_ITEM, this.envProperties.getName());
+        registrationBean.addInitParameter(AppEnvConsts.ENV_ITEM, this.envProperties.getName());
+        registrationBean.addInitParameter(AppEnvConsts.VERSION_ITEM, this.envProperties.getVersion());
         registrationBean.setName("contextInitDataFilter");
         return registrationBean;
     }
