@@ -20,6 +20,14 @@
             <groupId>com.easytoolsoft</groupId>
             <artifactId>easytoolsoft-mybatis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>easytoolsoft-spring-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>easytoolsoft-lang</artifactId>
+        </dependency>
         <!-- spring boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -4,10 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-import com.easytoolsoft.template.common.spring.converter.ResponseResult2HttpMessageConverter;
-import com.easytoolsoft.template.common.spring.i18n.MyResourceBundleMessageSource;
-import com.easytoolsoft.template.common.spring.resolver.CurrentUserMethodArgumentResolver;
-import com.easytoolsoft.template.common.spring.resolver.ResponseBodyWrapFactoryBean;
+import com.easytoolsoft.commons.support.converter.ResponseResult2HttpMessageConverter;
+import com.easytoolsoft.commons.support.i18n.CustomResourceBundleMessageSource;
+import com.easytoolsoft.commons.support.resolver.CurrentUserMethodArgumentResolver;
+import com.easytoolsoft.commons.support.resolver.ResponseBodyWrapFactoryBean;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

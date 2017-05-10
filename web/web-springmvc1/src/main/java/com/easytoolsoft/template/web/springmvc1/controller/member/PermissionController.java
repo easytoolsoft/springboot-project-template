@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
-import com.easytoolsoft.template.common.annotation.OpLog;
-import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.commons.support.annotation.OpLog;
+import com.easytoolsoft.commons.support.model.ResponseResult;
 import com.easytoolsoft.template.data.mybatis.domain.Permission;
 import com.easytoolsoft.template.data.mybatis.domain.example.PermissionExample;
 import com.easytoolsoft.template.data.mybatis.service.PermissionService;

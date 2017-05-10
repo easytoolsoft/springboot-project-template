@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.easytoolsoft.template.common.annotation.CurrentUser;
-import com.easytoolsoft.template.common.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.support.annotation.CurrentUser;
+import com.easytoolsoft.commons.support.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.domain.User;
-import com.easytoolsoft.template.data.mybatis.service.MyMembershipFacade;
+import com.easytoolsoft.template.data.mybatis.service.MembershipFacadeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = {"", "/", "/home"})
 public class HomeController {
     @Resource
-    private MyMembershipFacade membershipFacade;
+    private MembershipFacadeService membershipFacade;
 
     @GetMapping(value = {"", "/", "/index"})
     public String index(@CurrentUser final User loginUser, final Model model) {

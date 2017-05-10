@@ -3,8 +3,8 @@ package com.easytoolsoft.template.data.mybatis.service;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.easytoolsoft.template.common.security.MembershipFacade;
-import com.easytoolsoft.template.common.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.support.security.MembershipFacade;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 
 /**
@@ -13,7 +13,7 @@ import com.easytoolsoft.template.data.mybatis.domain.Module;
  * @author zhiwei.deng
  * @date 2017-03-25
  */
-public interface MyMembershipFacade extends MembershipFacade {
+public interface MembershipFacadeService extends MembershipFacade {
     void loadCache();
 
     List<EasyUITreeNode<Module>> getModuleTree(final List<Module> modules, final Predicate<Module> predicate);

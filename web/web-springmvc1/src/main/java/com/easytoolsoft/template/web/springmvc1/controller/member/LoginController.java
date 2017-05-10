@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.easytoolsoft.template.common.model.ResponseResult;
-import com.easytoolsoft.template.common.spring.i18n.LocaleUtils;
+import com.easytoolsoft.commons.support.model.ResponseResult;
+import com.easytoolsoft.commons.support.spring.i18n.LocaleUtils;
 import com.easytoolsoft.template.data.mybatis.service.EventService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;

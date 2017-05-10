@@ -1,7 +1,7 @@
 package com.easytoolsoft.template.web.springmvc1.config.web;
 
-import com.easytoolsoft.template.common.consts.AppEnvConstants;
-import com.easytoolsoft.template.common.filter.ContextInitDataFilter;
+import com.easytoolsoft.commons.support.consts.AppEnvConstants;
+import com.easytoolsoft.commons.support.filter.ContextInitDataFilter;
 import com.easytoolsoft.template.web.springmvc1.config.properties.EnvProperties;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.springframework.beans.factory.annotation.Autowired;

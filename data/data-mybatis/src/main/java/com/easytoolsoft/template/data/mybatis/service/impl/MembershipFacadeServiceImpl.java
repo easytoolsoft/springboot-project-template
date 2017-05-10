@@ -9,10 +9,10 @@ import java.util.function.Predicate;
 
 import javax.annotation.Resource;
 
-import com.easytoolsoft.template.common.tree.EasyUITreeNode;
+import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
 import com.easytoolsoft.template.data.mybatis.service.ModuleService;
-import com.easytoolsoft.template.data.mybatis.service.MyMembershipFacade;
+import com.easytoolsoft.template.data.mybatis.service.MembershipFacadeService;
 import com.easytoolsoft.template.data.mybatis.service.PermissionService;
 import com.easytoolsoft.template.data.mybatis.service.RoleService;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
  * @date 2017-03-25
  */
 @Service("MyBatisMembershipFacade")
-public class MembershipFacadeImpl implements MyMembershipFacade {
+public class MembershipFacadeServiceImpl implements MembershipFacadeService {
     @Resource
     private UserService userService;
     @Resource
@@ -37,7 +37,7 @@ public class MembershipFacadeImpl implements MyMembershipFacade {
     @Resource
     private PermissionService permissionService;
 
-    public MembershipFacadeImpl() {
+    public MembershipFacadeServiceImpl() {
     }
 
     @Override

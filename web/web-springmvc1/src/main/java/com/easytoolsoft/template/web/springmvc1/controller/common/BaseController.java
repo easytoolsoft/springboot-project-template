@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.mybatis.service.CrudService;
-import com.easytoolsoft.template.common.model.ResponseResult;
+import com.easytoolsoft.commons.support.model.ResponseResult;
 import com.easytoolsoft.template.web.springmvc1.model.DataGridPager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
