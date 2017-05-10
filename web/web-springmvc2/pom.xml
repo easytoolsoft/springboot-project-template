@@ -16,7 +16,18 @@
         <push.image>false</push.image>
     </properties>
     <dependencies>
-        <!-- easytoolsoft commons -->
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>easytoolsoft-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>easytoolsoft-spring-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.easytoolsoft</groupId>
+            <artifactId>easytoolsoft-lang</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.easytoolsoft</groupId>
             <artifactId>common</artifactId>
@@ -28,10 +39,6 @@
         <dependency>
             <groupId>com.easytoolsoft</groupId>
             <artifactId>security-shiro</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.easytoolsoft</groupId>
-            <artifactId>easytoolsoft-mybatis</artifactId>
         </dependency>
         <!-- spring boot -->
         <dependency>

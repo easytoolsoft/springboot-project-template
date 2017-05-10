@@ -3,7 +3,7 @@ package com.easytoolsoft.template.data.mybatis.service.impl;
 import javax.annotation.Resource;
 
 import com.easytoolsoft.mybatis.service.AbstractCrudService;
-import com.easytoolsoft.commons.lang.security.PasswordService;
+import com.easytoolsoft.commons.support.security.PasswordService;
 import com.easytoolsoft.template.data.mybatis.repos.UserRepository;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
