@@ -15,6 +15,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
 /**
  * java web servlet 配置类
@@ -53,6 +54,16 @@ public class ServletConfig {
         registrationBean.addInitParameter(AppEnvConsts.VERSION_ITEM, this.envProperties.getVersion());
         registrationBean.setName("contextInitDataFilter");
         return registrationBean;
+    }
+
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean() {
+        FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
+        filterRegistration.setFilter(new DelegatingFilterProxy("shiroFilter"));
+        filterRegistration.addInitParameter("targetFilterLifecycle", "true");
+        filterRegistration.setEnabled(true);
+        filterRegistration.addUrlPatterns("/*");
+        return filterRegistration;
     }
 
     @Bean
