@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 /**
  * 用户登录页控制器
@@ -58,7 +59,8 @@ public class LoginController {
 
     @ResponseBody
     @GetMapping(value = "/pageMessages")
-    public Map<String, String> getPageMessageSource() {
+    public Map<String, String> getPageMessageSource(final HttpServletRequest req) {
+        log.info("sessionID:{}",WebUtils.getSessionId(req));
         return LocaleUtils.getMessages("view.member.login", "ctrl.member.login");
     }
 

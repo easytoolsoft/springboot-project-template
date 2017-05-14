@@ -13,12 +13,14 @@ import com.google.common.collect.Maps;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -70,6 +72,13 @@ public class ShiroConfig {
     }
 
     @Bean
+    public SessionManager sessionManager() {
+        DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+        sessionManager.getSessionIdCookie().setName("SPRINGMVC2_JSESSIONID");
+        return sessionManager;
+    }
+
+    @Bean
     public MembershipFilter membershipFilter() {
         return new MembershipFilter();
     }
@@ -78,6 +87,7 @@ public class ShiroConfig {
     public SecurityManager securityManager() {
         final DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
+        securityManager.setSessionManager(sessionManager());
         securityManager.setCacheManager(cacheManager());
         securityManager.setRememberMeManager(rememberMeManager());
         return securityManager;

@@ -24,12 +24,12 @@ import org.apache.shiro.util.ByteSource;
  */
 public class MyShiroRealm extends AuthorizingRealm {
     @Resource
-    private MembershipFacade membershipFacade;
+    private MembershipFacade<User> membershipFacade;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String account = (String)principals.getPrimaryPrincipal();
-        User user = (User)membershipFacade.getUser(account);
+        User user = membershipFacade.getUser(account);
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.setRoles(membershipFacade.getRoleSet(user.getRoles()));
@@ -40,7 +40,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String account = (String)token.getPrincipal();
-        User user = (User)membershipFacade.getUser(account);
+        User user = membershipFacade.getUser(account);
         if (user == null) {
             throw new UnknownAccountException();
         }
