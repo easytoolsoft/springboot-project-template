@@ -10,7 +10,9 @@ import org.springframework.context.annotation.Configuration;
  * @date 2017-04-10
  **/
 @Configuration
-@ComponentScan(basePackages = {"com.easytoolsoft.template","com.easytoolsoft.commons.support"})
+@ComponentScan(basePackages = {
+    "com.easytoolsoft.template",
+    "com.easytoolsoft.commons.support"})
 public class MainConfig {
 
 }

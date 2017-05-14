@@ -7,7 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,27 +21,44 @@ import org.springframework.session.security.web.authentication.SpringSessionReme
  * @date 2017-05-11
  **/
 @Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity
+@SuppressWarnings("SpringJavaAutowiringInspection")
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
             .authorizeRequests()
             .anyRequest()
-            .authenticated().and()
+            .authenticated()
+            .and()
             .rememberMe()
             .rememberMeServices(rememberMeServices());
+    }
 
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+            .userDetailsService(this.userDetailsService)
+            .passwordEncoder(this.passwordEncoder());
+    }
+
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 
     @Bean
-    RememberMeServices rememberMeServices() {
+    public RememberMeServices rememberMeServices() {
         SpringSessionRememberMeServices rememberMeServices =
             new SpringSessionRememberMeServices();
         rememberMeServices.setAlwaysRemember(true);
@@ -53,18 +70,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(8);
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .userDetailsService(this.userDetailsService)
-            .passwordEncoder(this.passwordEncoder());
-    }
-
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
 }
 
 
