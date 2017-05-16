@@ -23,27 +23,47 @@ public class ShiroPasswordService implements PasswordService {
         this.randomNumberGenerator = randomNumberGenerator;
     }
 
-    @Override
     public void setAlgorithmName(String algorithmName) {
         this.algorithmName = algorithmName;
     }
 
-    @Override
     public void setHashIterations(int hashIterations) {
         this.hashIterations = hashIterations;
     }
 
     @Override
     public String genreateSalt() {
-        return randomNumberGenerator.nextBytes().toHex();
+        return this.randomNumberGenerator.nextBytes().toHex();
     }
 
     @Override
-    public String encryptPassword(String password, String credentialsSalt) {
+    public String encode(CharSequence rawPassword, String credentialsSalt) {
         return new SimpleHash(
             algorithmName,
-            password,
+            rawPassword,
             ByteSource.Util.bytes(credentialsSalt),
             hashIterations).toHex();
+    }
+
+    @Override
+    public String encode(CharSequence rawPassword) {
+        return this.encode(rawPassword, "shiro");
+    }
+
+    @Override
+    public boolean matches(CharSequence rawPassword, String encodedPassword) {
+        return this.matches(rawPassword, encodedPassword, "shiro");
+    }
+
+    @Override
+    public boolean matches(CharSequence rawPassword, String encodedPassword, String credentialsSalt) {
+        String encode = this.encode(rawPassword, credentialsSalt);
+        return encode.equals(encodedPassword);
+    }
+
+    public static void main(String... args) {
+        String credentialsSalt = "test283facc4dc9896ddb303a736be9530ea";
+        ShiroPasswordService passwordService = new ShiroPasswordService();
+        System.out.println(passwordService.encode("123456", credentialsSalt));
     }
 }

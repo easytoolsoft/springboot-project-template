@@ -13,9 +13,9 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <!--<module>../easytoolsoft-lang</module>-->
-        <!--<module>../easytoolsoft-spring-support</module>-->
-        <!--<module>../easytoolsoft-mybatis</module>-->
+        <module>../easytoolsoft-lang</module>
+        <module>../easytoolsoft-spring-support</module>
+        <module>../easytoolsoft-mybatis</module>
         <module>common</module>
         <module>data</module>
         <module>cache</module>

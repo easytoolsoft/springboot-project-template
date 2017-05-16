@@ -2,11 +2,11 @@ package com.easytoolsoft.template.data.mybatis.service.impl;
 
 import javax.annotation.Resource;
 
-import com.easytoolsoft.mybatis.service.AbstractCrudService;
 import com.easytoolsoft.commons.support.security.PasswordService;
-import com.easytoolsoft.template.data.mybatis.repos.UserRepository;
+import com.easytoolsoft.mybatis.service.AbstractCrudService;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
+import com.easytoolsoft.template.data.mybatis.repos.UserRepository;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +39,6 @@ public class UserServiceImpl
     @Override
     public void encryptPassword(final User user) {
         user.setSalt(this.passwordService.genreateSalt());
-        user.setPassword(this.passwordService.encryptPassword(user.getPassword(), user.getCredentialsSalt()));
+        this.passwordService.encode(user.getPassword(), user.getCredentialsSalt());
     }
 }

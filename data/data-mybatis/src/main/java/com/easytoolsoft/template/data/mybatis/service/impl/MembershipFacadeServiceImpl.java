@@ -11,8 +11,9 @@ import javax.annotation.Resource;
 
 import com.easytoolsoft.commons.lang.tree.EasyUITreeNode;
 import com.easytoolsoft.template.data.mybatis.domain.Module;
-import com.easytoolsoft.template.data.mybatis.service.ModuleService;
+import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.service.MembershipFacadeService;
+import com.easytoolsoft.template.data.mybatis.service.ModuleService;
 import com.easytoolsoft.template.data.mybatis.service.PermissionService;
 import com.easytoolsoft.template.data.mybatis.service.RoleService;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
@@ -51,7 +52,7 @@ public class MembershipFacadeServiceImpl implements MembershipFacadeService {
     }
 
     @Override
-    public Object getUser(final String account) {
+    public User getUser(final String account) {
         return this.userService.getUserByAccount(account);
     }
 
@@ -131,6 +132,7 @@ public class MembershipFacadeServiceImpl implements MembershipFacadeService {
         return true;
     }
 
+    @Override
     public boolean isAdministrator(final String roleIds) {
         if (StringUtils.isBlank(roleIds)) {
             return false;
@@ -138,6 +140,7 @@ public class MembershipFacadeServiceImpl implements MembershipFacadeService {
         return this.roleService.isSuperAdminRole(roleIds);
     }
 
+    @Override
     public List<Module> getModules(final String roleIds) {
         if (this.isAdministrator(roleIds)) {
             return this.moduleService.getAll();

@@ -14,5 +14,6 @@
         <module>web-jersey</module>
         <module>web-springmvc1</module>
         <module>web-springmvc2</module>
+        <module>web-jwt</module>
     </modules>
 </project>

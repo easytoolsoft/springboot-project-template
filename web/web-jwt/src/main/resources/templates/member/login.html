@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/body}">
+<head>
+    <title th:text="|#{view.member.login.signIn}|">Sign in</title>
+    <script src="../../static/custom/js/member/login.js"
+            th:src="@{'/custom/js/member/login.js?v='+${version}}"></script>
+</head>
+<body layout:fragment="content" class="contrast-blue login contrast-background">
+<div class="middle-container">
+    <div class="middle-row">
+        <div class="middle-wrapper">
+            <div class="login-container-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-center">
+                                <img width="121" height="31" th:src="@{/images/logo_lg.svg}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <h1 class="text-center title" th:text="|#{view.member.login.signIn}|">Sign in</h1>
+                            <form id="login_form" name="login_form" class="validate-form">
+                                <div class="form-group">
+                                    <div class="controls with-icon-over-input">
+                                        <input value="" placeholder="account" class="form-control"
+                                               data-rule-required="true" id="account" name="account" type="text"
+                                               th:placeholder="|#{view.member.login.account}|"/>
+                                        <i class="icon-user text-muted"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="controls with-icon-over-input">
+                                        <input value="" placeholder="Password" class="form-control"
+                                               data-rule-required="true" id="password" name="password" type="password"
+                                               th:placeholder="|#{view.member.login.password}|"/>
+                                        <i class="icon-lock text-muted"></i>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label for="remember_me">
+                                        <input id="remember_me" name="remember_me" type="checkbox" value="1"/>
+                                        <th:block th:text="|#{view.member.login.rememberMe}|">Remember me</th:block>
+                                    </label>
+                                </div>
+                            </form>
+                            <button id="btn_login" class="btn btn-block" th:text="|#{view.member.login.signIn}|">Sign in</button>
+                            <div class="text-center">
+                                <hr class="hr-normal">
+                                <a th:href="@{/views/member/forgot_password.html}"
+                                   th:text="|#{view.member.login.forgotPassword}|"> Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-container-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

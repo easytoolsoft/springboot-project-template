@@ -100,8 +100,8 @@ public class ShiroConfig {
 
     @Bean
     public RetryLimitHashedCredentialsMatcher credentialsMatcher() {
-        final RetryLimitHashedCredentialsMatcher credentialsMatcher = new RetryLimitHashedCredentialsMatcher(
-            cacheManager());
+        final RetryLimitHashedCredentialsMatcher credentialsMatcher =
+            new RetryLimitHashedCredentialsMatcher(cacheManager());
         credentialsMatcher.setHashAlgorithmName("MD5");
         credentialsMatcher.setHashIterations(2);
         credentialsMatcher.setStoredCredentialsHexEncoded(true);

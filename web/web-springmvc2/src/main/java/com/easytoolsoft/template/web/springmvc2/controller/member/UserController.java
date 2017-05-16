@@ -8,11 +8,11 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
-import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.commons.support.annotation.CurrentUser;
 import com.easytoolsoft.commons.support.annotation.OpLog;
-import com.easytoolsoft.commons.support.security.PasswordService;
 import com.easytoolsoft.commons.support.model.ResponseResult;
+import com.easytoolsoft.commons.support.security.PasswordService;
+import com.easytoolsoft.mybatis.pager.PageInfo;
 import com.easytoolsoft.template.data.mybatis.domain.User;
 import com.easytoolsoft.template.data.mybatis.domain.example.UserExample;
 import com.easytoolsoft.template.data.mybatis.service.UserService;
@@ -100,9 +100,8 @@ public class UserController
     public ResponseResult changeMyPassword(@CurrentUser final User loginUser, final String password,
                                            final String oldPassword) {
         final ResponseResult<String> result = new ResponseResult<>();
-        final String encryptPassword = this.passwordService.encryptPassword(oldPassword,
-            loginUser.getCredentialsSalt());
-        if (!encryptPassword.equals(loginUser.getPassword())) {
+        if (!this.passwordService.matches(oldPassword,
+            loginUser.getPassword(), loginUser.getCredentialsSalt())) {
             result.setSuccess(false);
             result.setMsg("原账户密码错误！");
             return result;
